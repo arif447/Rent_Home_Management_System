@@ -1,0 +1,43 @@
+{% extends 'navbar.html' %}
+{% block title_block %}
+    Feedback_History
+{% endblock %}
+{% block css_block %}
+<style>
+
+</style>
+{% endblock %}
+{% block body_block %}
+<div class="table-responsive-lg">
+    <table class="table table-hover table-bordered" style="text-align: center;">
+        <thead  class="table-dark">
+            <tr>
+                  <th scope="col">Username</th>
+                  <th scope="col">House Name</th>
+                  <th scope="col">Flat Number</th>
+                  <th scope="col">Feedback</th>
+
+                  <th scope="col">Create_at</th>
+                  <th scope="col">Replay</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+        {% for feedback in student_feedback %}
+            <tr class="table-info">
+                <td>{{ feedback.user }}</td>
+                 <td>{{ feedback.house_name }}</td>
+                <td>{{ feedback.flat_number }}</td>
+                <td>{{ feedback.feedback|linebreaks }}</td>
+                <td>{{ feedback.created }}</td>
+                <td>{{ feedback.replay_feedback|linebreaks}}</td>
+
+            </tr>
+        {% endfor %}
+          </tbody>
+        </table>
+
+</div>
+
+{% endblock %}

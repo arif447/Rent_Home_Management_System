@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    Flat Details
+{% endblock %}
+{% block css_block %}
+      <style>
+
+
+        /* features starts */
+        #features{
+            padding: 10% 10%;
+            width: 100%;
+
+        }
+
+        .features-col{
+            border: 1px solid #272426;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left ;
+              width: 100%;
+        }
+
+        /* features end */
+      </style>
+
+{% endblock %}
+{% block body_block %}
+ <div class="container my-5">
+       <div class="card">
+           <div class="row">
+              <aside class="col-sm-5 border-right">
+                  <article class="gallery-wrap">
+                      <div class="img-big-wrap">
+                          <div>
+                              <a href="#"><img src="/media/{{ details.Flat_image }}" style="width:450px;"></a>
+                          </div>
+                      </div>
+                  </article>
+              </aside>
+               <aside class="col-sm-7">
+                     <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">{{ details.House_rent }} Tk</h5>
+                                        <a class="d-block h5 mb-2" href="#"> House name :{{ details.House_name }}</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>{{ details.Address }}</p>
+
+                                        <small class="flex-fill text-center "><i class="fa fa-ruler-combined text-primary me-2"></i>{{ details.Square_feet }} Sqft</small><br><br>
+                                        <small class="flex-fill text-center"><i class="fa fa-bed text-primary me-2"></i>{{ details.Bedroom }} Bed</small><br><br>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>{{ details.Number_of_bath }} Bath</small><br><br>
+
+                     </div>
+                       {% if request.user.is_authenticated and request.user.is_owner %}
+                           &nbsp; &nbsp;&nbsp;  <a href="{% url 'App_Add_Flat:update_flat' pk=details.pk %}" class="btn btn-lg btn-outline-primary text-uppercase">Update</a>
+                            &nbsp; <a href="{% url 'App_Add_Flat:delete_flat' pk=details.pk %}" class="btn btn-lg btn-outline-primary text-uppercase">Delete</a>
+
+                       {% else %}
+                           &nbsp; &nbsp; &nbsp;  <a href="{% url 'App_Flat_Booking:my_flat' pk=details.pk %}" class="btn btn-lg btn-outline-primary text-uppercase"> <i class="fas fa-shopping-cart"></i> Rent</a>
+                       {% endif %}
+                   </article>
+               </aside>
+           </div>
+       </div>
+   </div>
+
+    <section id="features" class="text-center">
+        <div class="row">
+            <div class="col-lg-6 d-block d-lg-flex">
+              <div class="features-col ">
+
+                  <h2 class="font-weight-bold" style="text-align: center;">Flat Information</h2>
+                  <h5> House Name : {{ details.House_name }}</h5>
+                  <p> Flat Number : {{ details.Flat_number }}</p>
+                  <p> Address : {{ details.Address }}</p>
+                  <p>Square Feet : {{ details.Square_feet}}</p>
+                  <p>Number Of Bed : {{ details.Bedroom }}</p>
+                  <p>Number Of Bath : {{ details.Number_of_bath }}</p>
+                  <p>Number Of Balcony : {{ details.Number_of_balcony }}</p>
+                  <p>House Rent : {{ details.House_rent }}</p>
+                  <p> Utility Bill : {{ details.Utility_bill }}</p>
+
+
+
+
+              </div>
+            </div>
+
+            <div class="col-lg-6 d-block d-lg-flex">
+              <div class="features-col ">
+
+                  <h5 class="font-weight-bold" style="text-align: center;">Flat Details</h5>
+                  <p class="small">{{ details.Description }}</p>
+              </div>
+            </div>
+        </div>
+    </section>
+     <!-- features ends  --
+{% endblock %}
+
+

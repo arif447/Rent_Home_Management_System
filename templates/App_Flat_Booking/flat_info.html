@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    Flat Info
+{% endblock %}
+{% block css_block %}
+    <style>
+
+        .colorfortable{
+            background-color: #E8F9FD
+        }
+
+        .containerfortable {
+        padding-left: 5%;
+        padding-right: 5%;
+
+        }
+    </style>
+{% endblock %}
+{% block body_block %}
+
+    <h2 class="text-center">My Flat Information </h2>
+    <br>
+    <div class="table-responsive containerfortable">
+    <table class="table table-borderless">
+        <thead class="colorfortable">
+            <tr>
+                  <th scope="col">Email</th>
+                  <th scope="col">Full Name</th>
+                  <th scope="col">House Name</th>
+                  <th scope="col">Flat</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">Rent</th>
+                  <th scope="col">Utility</th>
+                  <th scope="col">Bedroom</th>
+                  <th scope="col">Bath</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                  <td>{{ obj.renter }}</td>
+                  <td>{{ obj.renter.user_profile.Full_name }}</td>
+                  <td>{{ obj.info_flat.House_name }}</td>
+                  <td>{{ obj.info_flat.Flat_number }}</td>
+                  <td>{{ obj.info_flat.Address }}</td>
+                  <td>{{ obj.info_flat.House_rent }}</td>
+                  <td>{{ obj.info_flat.Utility_bill }}</td>
+                  <td>{{ obj.info_flat.Bedroom }}</td>
+                  <td>{{ obj.info_flat.Number_of_bath }}</td>
+
+
+            </tr>
+
+          </tbody>
+        </table>
+
+    </table>
+    </div>
+{% endblock %}

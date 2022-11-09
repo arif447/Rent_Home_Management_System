@@ -1,0 +1,52 @@
+{% extends 'navbar.html' %}
+{% load crispy_forms_tags %}
+{% block title_block %}
+    Renter_list
+{% endblock %}
+
+{% block css_block %}
+
+{% endblock %}
+{% block body_block %}
+    <h2 class="text-center">My All Renters </h2>
+     <div class="table-responsive-lg">
+    <table class="table table-hover table-dark " style="text-align: center">
+        <thead>
+            <tr>
+                  <th scope="col">Email</th>
+                  <th scope="col">Full Name</th>
+                  <th scope="col">House Name</th>
+                  <th scope="col">Flat Number</th>
+                  <th scope="col">Address</th>
+                  <th scope="col">House Rent</th>
+                  <th scope="col">Utility</th>
+                  <th scope="col">Created</th>
+                  <th scope="col" colspan="2" >Action</th>
+            </tr>
+        </thead>
+
+        <tbody >
+           {% for renter in object_list %}
+
+                   <tr>
+                       <td>{{ renter.renter }}</td>
+                       <td>{{ renter.renter.user_profile.Full_name }}</td>
+                       <td>{{ renter.info_flat.House_name }}</td>
+                       <td>{{ renter.info_flat.Flat_number }}</td>
+                       <td>{{ renter.info_flat.Address }}</td>
+                       <td>{{ renter.info_flat.House_rent }}</td>
+                       <td>{{ renter.info_flat.Utility_bill }}</td>
+                       <td>{{ renter.created }}</td>
+                       <td><button type="button" class="btn btn-outline-success">Update</button>
+                           <button type="button" class="btn btn-outline-danger">Delete</button>
+                       </td>
+
+
+                  </tr>
+
+            {% endfor %}
+
+          </tbody>
+        </table>
+     </div>
+{% endblock %}

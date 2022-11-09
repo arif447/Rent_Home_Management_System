@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title_block %}
+    category type
+{% endblock %}
+{% block body_block %}
+       <!-- Category Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Category Types</h1>
+                    <p>Find your home easily from the category type and make sure beautiful flat. </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="" style="text-decoration: none;">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="{% static 'img/icon-apartment.png' %}" alt="Icon">
+                                </div>
+                                <h6>Category Type 1</h6>
+                                <span>123 Properties</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="" style="text-decoration: none;">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="{% static 'img/icon-villa.png' %}" alt="Icon">
+                                </div>
+                                <h6>Category Type 2</h6>
+                                <span>123 Properties</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="" style="text-decoration: none;">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="{% static 'img/icon-house.png' %}" alt="Icon">
+                                </div>
+                                <h6>Category Type 3</h6>
+                                <span>123 Properties</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                        <a class="cat-item d-block bg-light text-center rounded p-3" href="" style="text-decoration: none;">
+                            <div class="rounded p-4">
+                                <div class="icon mb-3">
+                                    <img class="img-fluid" src="{% static 'img/icon-housing.png' %}" alt="Icon">
+                                </div>
+                                <h6>Category Type 4</h6>
+                                <span>123 Properties</span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Category End -->
+
+{% endblock %}

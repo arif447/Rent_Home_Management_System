@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'crispy_forms',
     'App_Login',
     'App_Add_Flat',
+    'App_About',
+    'fontawesomefree',
+    'App_Flat_Booking',
+    'App_Feedback',
+    'App_Payment',
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -90,6 +95,7 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

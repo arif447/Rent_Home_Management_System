@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block title_block %}
+    Emergency Contact
+{% endblock %}
+
+{% block css_block %}
+
+    <style>
+ .service{
+	background: white;
+	width: 100%;
+	padding: 100px 0px;
+}
+.title h2{
+	color: black;
+	font-size: 75px;
+	width: 1130px;
+	margin: 30px auto;
+	text-align: center;
+}
+.box{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 400px;
+}
+.card{
+	height: 265px;
+	width: 245px;
+	padding: 20px 35px;
+	background: #191919;
+	border-radius: 20px;
+	margin: 15px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+}
+.card i{
+	font-size: 10px;
+	display: block;
+	text-align: center;
+	margin: 25px 0px;
+	color: #f9004d;
+
+}
+h5{
+	color: white;
+	font-size: 23px;
+	margin-bottom: 15px;
+}
+.pra p{
+	color:#0b2540;
+	font-size: 16px;
+	line-height: 27px;
+	margin-bottom: 30px;
+}
+.card .button{
+	background-color:#f9004d;
+	color: white;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s;
+}
+.card .button:hover{
+	background-color: transparent;
+	border: 2px solid #f9004d;
+	cursor: pointer;
+    color: #0b2540;
+}
+
+    </style>
+{% endblock %}
+
+{% block  body_block%}
+
+    <!-----service section start----------->
+    <div class="container">
+	<div class="service">
+		<div class="title">
+			<h2>Contact Us</h2>
+		</div>
+
+		<div class="box">
+			<div class="card">
+				 <i style="color:#f9004d " class="fas fa-home"></i><br>
+				<h5>Address</h5>
+				<div class="pra">
+					<p>2 Street, Kalabagan, Bangladesh</p>
+                    <br>
+					<p style="text-align: center;">
+						<a class="button" href="#">Address</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="card">
+				   <i style="color:#f9004d "class="fas fa-phone"></i><br>
+				<h5>Phone</h5>
+				<div class="pra">
+					<p>+880 1847****55</p>
+
+                   <br>
+                    <br>
+					<p style="text-align: center;">
+						<a class="button" href="#">Phone</a>
+					</p>
+				</div>
+			</div>
+
+			<div class="card">
+				 <i style="color:#f9004d " class="fas fa-envelope"></i>
+                <br>
+				<h5>Email</h5>
+				<div class="pra">
+					<p>arproperties@gmail.com</p>
+                  <br>
+					<p style="text-align: center;">
+						<a class="button" href="#">E-mail</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+    </div>
+{% endblock %}
+
